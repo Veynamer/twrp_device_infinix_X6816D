@@ -9,28 +9,6 @@ LOCAL_PATH := device/infinix/X6816D
 
 PRODUCT_PLATFORM := ums512
 
-# A/B
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    gz \
-    lk \
-    logo \
-    md1img \
-    preloader \
-    product \
-    scp \
-    spmfw \
-    sspm \
-    system \
-    system_ext \
-    tee \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vendor \
-    vendor_boot
-
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -52,22 +30,27 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Health HAL
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service \
     libhealthd.$(PRODUCT_PLATFORM)
 
 # Boot Control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-service
 
-PRODUCT_PACKAGES_DEBUG += \
-    bootctrl
+PRODUCT_PACKAGES += \
+    bootctrl.ums512
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.ums512 \
+    libgptutils \
+    libz \
+    libcutils
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
+    android.hardware.fastboot@1.0-impl \
     fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
