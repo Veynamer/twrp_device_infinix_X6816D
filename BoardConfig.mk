@@ -162,6 +162,15 @@ TW_HAS_NO_RECOVERY_PARTITION := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
+#for cali mode use boot.img
+BOARD_CALIMODE_USE_BOOTIMG := true
+
+# SDCARD AND OTG
+BOARD_ROOT_EXTRA_FOLDERS += usb-otg
+BOARD_ROOT_EXTRA_FOLDERS += external_sd
+
+# Vibrator
+TW_HAPTICS_TSPDRV := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
