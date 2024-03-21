@@ -37,20 +37,15 @@ PRODUCT_PACKAGES += \
 # Boot Control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-service
 
 PRODUCT_PACKAGES += \
     bootctrl.ums512
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.ums512 \
-    libgptutils \
-    libz \
-    libcutils
-
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl \
+    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
