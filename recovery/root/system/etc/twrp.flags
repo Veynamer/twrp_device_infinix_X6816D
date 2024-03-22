@@ -2,10 +2,10 @@
 # For infinix X6816D
 
 # <mount_point>      <fstype>  <device>        <device2>                  <flags>
-/system_image            emmc     /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1
-/system_ext_image        emmc     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1
-/product_image           emmc     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1
-/vendor_image            emmc     /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/system_image            emmc     /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1;wipeingui
+/system_ext_image        emmc     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1;wipeingui
+/product_image           emmc     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1;wipeingui
+/vendor_image            emmc     /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1;wipeingui
 /super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
@@ -21,4 +21,4 @@
 /vbmeta_system_ext       emmc     /dev/block/by-name/vbmeta_system_ext         flags=display=vbmeta_system_ext;slotselect;backup=1;flashimg=1
 # Removable storage
 /external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;removable;fsflags="utf8"
-/devices/platform/soc/soc:aon/5fff0000.usb/musb-hdrc.*.auto/usb*      vfat     flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
+/usb_otg                 vfat     /devices/platform/soc/soc:aon/5fff0000.usb/musb-hdrc.*.auto/usb*        flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
