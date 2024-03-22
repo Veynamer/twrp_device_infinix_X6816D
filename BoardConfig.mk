@@ -171,6 +171,7 @@ BOARD_ROOT_EXTRA_FOLDERS += external_sd
 
 # Vibrator
 TW_HAPTICS_TSPDRV := true
+TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
