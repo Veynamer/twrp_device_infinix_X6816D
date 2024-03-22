@@ -26,7 +26,7 @@ Medium checks
 - [X] Correct date
 
 Minor checks
-- [ ] MTP export
+- [X] MTP export
 - [X] reboot to bootloader
 - [X] reboot to recovery
 - [X] poweroff
@@ -34,7 +34,7 @@ Minor checks
 - [X] temperature
 - [ ] encrypted backups
 - [X] input devices via USB (USB-OTG) - keyboard, mouse and disks
-- [ ] USB mass storage export
+- [X] USB mass storage export
 - [X] set brightness
 - [ ] vibrate
 - [X] screenshot
