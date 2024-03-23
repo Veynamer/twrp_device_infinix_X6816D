@@ -41,13 +41,14 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-service
 
 PRODUCT_PACKAGES += \
-    bootctrl.ums512
+    bootctrl.unisoc \
+    bootctrl.unisoc.recovery
 
 # Fastbootd
 PRODUCT_PACKAGES += \
+    fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery \
-    fastbootd
+    android.hardware.fastboot@1.0-impl-mock.recovery 
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
