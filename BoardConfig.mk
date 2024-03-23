@@ -176,7 +176,7 @@ TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
 ## TWRP-Specific configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := X6816D Veynamer
+TW_DEVICE_VERSION := X6816D Veynamer & YMI-dev
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/sc27xx:transsion/brightness"
