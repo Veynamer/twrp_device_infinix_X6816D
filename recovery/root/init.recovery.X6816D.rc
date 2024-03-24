@@ -1,2 +1,5 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
+
+on property:ro.twrp.boot=1
+	write /sys/devices/platform/extcon-gpio/extcon_hostenable enabled
