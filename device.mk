@@ -44,11 +44,25 @@ PRODUCT_PACKAGES += \
     bootctrl.unisoc \
     bootctrl.unisoc.recovery
 
+#vibro
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.vibrator-V1-cpp.so \
+    android.hardware.vibrator@1.0.so \
+    android.hardware.vibrator@1.1.so \
+    android.hardware.vibrator@1.2.so \
+    android.hardware.vibrator@1.3.so 
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.1.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.3.so
 # Fastbootd
 PRODUCT_PACKAGES += \
-    fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery 
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
