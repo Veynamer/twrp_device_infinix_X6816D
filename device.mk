@@ -44,6 +44,19 @@ PRODUCT_PACKAGES += \
     bootctrl.unisoc \
     bootctrl.unisoc.recovery
 
+# --- Decryption (doesn't work!)
+PRODUCT_PROPERTY_OVERRIDES += \
+   	ro.crypto.dm_default_key.options_format.version=2 \
+   	ro.crypto.volume.filenames_mode=aes-256-cts \
+   	ro.crypto.volume.metadata.method=dm-default-key \
+   	ro.crypto.volume.options=::v2 \
+   	ro.crypto.uses_fs_ioc_add_encryption_key=true
+
+# Decryption
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
 #vibro
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.vibrator-V1-cpp.so \
