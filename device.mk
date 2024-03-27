@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
     bootctrl.unisoc.recovery
 
 # --- Decryption (doesn't work!)
-PRODUCT_PROPERTY_OVERRIDES += \
+# PRODUCT_PROPERTY_OVERRIDES += \
    	ro.crypto.dm_default_key.options_format.version=2 \
    	ro.crypto.volume.filenames_mode=aes-256-cts \
    	ro.crypto.volume.metadata.method=dm-default-key \
@@ -53,7 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    	ro.crypto.uses_fs_ioc_add_encryption_key=true
 
 # Decryption
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
