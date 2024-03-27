@@ -1,65 +1,26 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
-import /init.recovery.qcom_decrypt.rc
 
 on property:ro.twrp.boot=1
 	write /sys/devices/platform/extcon-gpio/extcon_hostenable enabled
+	
+on post-fs
+	insmod /vendor/lib/modules/sc27xx-vibra.ko
+	insmod /vendor/firmware/adaptive-ts.ko
 
+service fastbootd /system/bin/fastbootd
+    disabled
+    group system
+    seclabel u:r:fastbootd:s0
 
-on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+on property:sys.usb.config=fastboot
+    start fastbootd
 
-on init
-	start runatboot
+service vendor.vibrator-default /vendor/bin/hw/vendor.sprd.hardware.vibrator-service
+    class hal
+    user root
+    group root system
+    seclabel u:r:recovery:s0
 
 on boot
-    start health-hal-2-1
-
-on post-fs
-    start boot-hal-1-1
-    
-on property:ro.crypto.state=unencrypted
-    start prepdecrypt
-
-service runatboot /system/bin/runatboot.sh
-    oneshot
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-    
-on property:ro.crypto.state=unsupported
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:ro.crypto.state=unencrypted
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:twrp.decrypt.done=true
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager
-
-on property:ro.crypto.fs_crypto_blkdev=*
-    stop sbinqseecomd
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-    stop servicemanager
-    stop hwservicemanager    
-  
-service prepdecrypt /system/bin/prepdecrypt.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0  
+    start vendor.vibrator-default
