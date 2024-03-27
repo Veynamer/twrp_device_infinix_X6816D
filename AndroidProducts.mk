@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_X6816D.mk
 
 COMMON_LUNCH_CHOICES := \
-    pbrp_X6816D-user \
-    pbrp_X6816D-userdebug \
-    pbrp_X6816D-eng
+    twrp_X6816D-user \
+    twrp_X6816D-userdebug \
+    twrp_X6816D-eng
