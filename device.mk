@@ -28,6 +28,10 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+# Resolution
+TARGET_SCREEN_HEIGHT := 1640
+TARGET_SCREEN_WIDTH := 720
+
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
@@ -71,6 +75,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.3.so
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
