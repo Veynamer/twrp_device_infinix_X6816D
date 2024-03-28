@@ -202,6 +202,7 @@ TW_INCLUDE_FASTBOOTD := true
 TW_CUSTOM_CLOCK_POS := 47
 TW_CUSTOM_CPU_POS := 287
 TW_MTP_DEVICE := /dev/mtp_usb
+USE_RECOVERY_INSTALLER := true
 
 # Debug
 TWRP_EVENT_LOGGING := true
@@ -212,5 +213,4 @@ TARGET_USES_LOGD := true
 TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko adaptive_ts.ko"
 
 #PBRP_FLAGS
-#PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
-#PB_TORCH_MAX_BRIGHTNESS := 1
+PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
