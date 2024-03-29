@@ -40,18 +40,23 @@ TARGET_USES_UEFI := true
 TARGET_BOARD_PLATFORM := ums512
 PRODUCT_PLATFORM := ums512
 
+# SPRD hardware
+BOARD_USES_SPRD_HARDWARE := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    vendor \
-    vbmeta \
     system \
-    boot \
-    vbmeta_system \
+    vendor \
+    system_ext \
     product \
-    vbmeta_vendor \
+    boot \
     dtbo \
-    system_ext
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+    
+    
 
 # Display
 TARGET_SCREEN_DENSITY := 320
@@ -117,6 +122,10 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 TARGET_COPY_OUT_SYSTEM = system
 
+# Enable CPUSets
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
 # Crypto
 # TW_INCLUDE_CRYPTO := true
 # TW_INCLUDE_CRYPTO_FBE := true
@@ -179,15 +188,14 @@ TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := X6816D Veynamer & IMY-dev
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_USES_MKE2FS := true
-# TW_BRIGHTNESS_PATH := "/sys/class/leds/sc27xx:transsion/brightness"
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 150
+TW_DEFAULT_BRIGHTNESS := 190
 TW_MAX_BRIGHTNESS := 255
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_APEX := true
-TW_DEFAULT_LANGUAGE := en
+TW_DEFAULT_LANGUAGE := ru
 TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
