@@ -187,10 +187,6 @@ TW_SUPPORT_INPUT_1_2_HAPTICS := true
 TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := X6816D Veynamer & IMY-dev
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_USES_MKE2FS := true
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 190
-TW_MAX_BRIGHTNESS := 255
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_NANO := true
@@ -199,19 +195,29 @@ TW_DEFAULT_LANGUAGE := ru
 TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_SCREEN_BLANK := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_HAS_MTP := true
-TW_FRAMERATE := 90
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_FASTBOOTD := true
+USE_RECOVERY_INSTALLER := true
+
+# screen
+TW_FRAMERATE := 90
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 190
+TW_MAX_BRIGHTNESS := 255
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
+
+# StatusBar
+TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CLOCK_POS := 47
 TW_CUSTOM_CPU_POS := 287
+
+# MTP
 TW_MTP_DEVICE := /dev/mtp_usb
-USE_RECOVERY_INSTALLER := true
+TW_HAS_MTP := true
 
 # Debug
 TWRP_EVENT_LOGGING := true
@@ -223,3 +229,4 @@ TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.
 
 #PBRP_FLAGS
 PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
+PB_TORCH_MAX_BRIGHTNESS := 1
