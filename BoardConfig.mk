@@ -200,13 +200,12 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_FASTBOOTD := true
-USE_RECOVERY_INSTALLER := true
 
 # screen
 TW_FRAMERATE := 90
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 190
-TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/max_brightness"
+TW_DEFAULT_BRIGHTNESS := 2047
+TW_MAX_BRIGHTNESS := 4095
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
 
@@ -226,7 +225,3 @@ TARGET_USES_LOGD := true
 
 # Kernel module loading
 TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko adaptive_ts.ko"
-
-#PBRP_FLAGS
-PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
-PB_TORCH_MAX_BRIGHTNESS := 1
