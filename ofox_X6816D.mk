@@ -19,7 +19,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := X6816D
-PRODUCT_NAME := twrp_X6816D
+PRODUCT_NAME := ofox_X6816D
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix HOT 12 Play NFC
 PRODUCT_MANUFACTURER := infinix
