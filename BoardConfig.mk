@@ -203,9 +203,9 @@ TW_INCLUDE_FASTBOOTD := true
 
 # screen
 TW_FRAMERATE := 90
-TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/max_brightness"
-TW_DEFAULT_BRIGHTNESS := 2047
-TW_MAX_BRIGHTNESS := 4095
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 225
+TW_MAX_BRIGHTNESS := 255
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
 
