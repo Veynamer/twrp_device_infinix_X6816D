@@ -230,3 +230,4 @@ TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.
 #PBRP_FLAGS
 PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 1
+PB_DISABLE_DEFAULT_DM_VERITY := true
