@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_X6816D.mk
+    $(LOCAL_DIR)/ofox_X6816D.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_X6816D-user \
-    twrp_X6816D-userdebug \
-    twrp_X6816D-eng
+    ofox_X6816D-user \
+    ofox_X6816D-userdebug \
+    ofox_X6816D-eng
