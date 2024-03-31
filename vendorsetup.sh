@@ -34,8 +34,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_DELETE_AROMAFM=1
 	export OF_USE_GREEN_LED=0
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
-        export OF_FLASHLIGHT_ENABLE=1
-	export OF_FL_PATH1="/sys/class/leds/led_torch_2"
+        export FOX_USE_XZ_UTILS=1
  
 	# OTA
     export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
@@ -56,7 +55,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	# flashlight
-	export OF_FLASHLIGHT_ENABLE=0
+	export OF_FLASHLIGHT_ENABLE=1
+        export OF_FL_PATH1="/sys/devices/virtual/torch/torch/torch_level"
     
 	# R11
 	export FOX_VERSION="R11.1_1"
