@@ -40,18 +40,23 @@ TARGET_USES_UEFI := true
 TARGET_BOARD_PLATFORM := ums512
 PRODUCT_PLATFORM := ums512
 
+# SPRD hardware
+BOARD_USES_SPRD_HARDWARE := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    vendor \
-    vbmeta \
     system \
-    boot \
-    vbmeta_system \
+    vendor \
+    system_ext \
     product \
-    vbmeta_vendor \
+    boot \
     dtbo \
-    system_ext
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+    
+    
 
 # Display
 TARGET_SCREEN_DENSITY := 320
@@ -117,6 +122,10 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 TARGET_COPY_OUT_SYSTEM = system
 
+# Enable CPUSets
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
 # Crypto
 # TW_INCLUDE_CRYPTO := true
 # TW_INCLUDE_CRYPTO_FBE := true
@@ -144,9 +153,11 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
 
-# Properties
+# Properties prop & fstab
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Encryption
 PLATFORM_VERSION := 99.87.36
@@ -159,7 +170,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 #for cali mode use boot.img
@@ -177,30 +187,36 @@ TW_SUPPORT_INPUT_1_2_HAPTICS := true
 TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := X6816D Veynamer & IMY-dev
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_USES_MKE2FS := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/sc27xx:transsion/brightness"
-TW_DEFAULT_BRIGHTNESS := 150
-TW_MAX_BRIGHTNESS := 255
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_APEX := true
-TW_DEFAULT_LANGUAGE := en
+TW_DEFAULT_LANGUAGE := ru
 TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_SCREEN_BLANK := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_HAS_MTP := true
-TW_FRAMERATE := 90
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_FASTBOOTD := true
+
+# screen
+TW_FRAMERATE := 90
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/soc/soc:ap-ahb/20400000.dsi/20400000.dsi.0/display/panel0/sprd_backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 220
+TW_MAX_BRIGHTNESS := 255
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
+
+# StatusBar
+TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CLOCK_POS := 47
 TW_CUSTOM_CPU_POS := 287
+
+# MTP
 TW_MTP_DEVICE := /dev/mtp_usb
+TW_HAS_MTP := true
 
 # Debug
 TWRP_EVENT_LOGGING := true
@@ -209,4 +225,3 @@ TARGET_USES_LOGD := true
 
 # Kernel module loading
 TW_LOAD_VENDOR_MODULES := "incrementalfs.ko kheaders.ko trace_irqsoff_bytedancy.ko trace_noschedule_bytedancy.ko trace_runqlat_bytedancy.ko adaptive_ts.ko"
-
