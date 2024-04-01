@@ -8,14 +8,6 @@ on post-fs
 	#insmod /vendor/lib/modules/sc27xx-vibra.ko
 	insmod /vendor/firmware/adaptive-ts.ko
 
-service fastbootd /system/bin/fastbootd
-    disabled
-    group system
-    seclabel u:r:fastbootd:s0
-
-on property:sys.usb.config=fastboot
-    start fastbootd
-
 service vendor.vibrator-default /vendor/bin/hw/vendor.sprd.hardware.vibrator-service
     class hal
     user root

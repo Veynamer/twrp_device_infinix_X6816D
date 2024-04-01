@@ -5,16 +5,8 @@ on property:ro.twrp.boot=1
 	write /sys/devices/platform/extcon-gpio/extcon_hostenable enabled
 	
 on post-fs
-	insmod /vendor/lib/modules/sc27xx-vibra.ko
+	#insmod /vendor/lib/modules/sc27xx-vibra.ko
 	insmod /vendor/firmware/adaptive-ts.ko
-
-service fastbootd /system/bin/fastbootd
-    disabled
-    group system
-    seclabel u:r:fastbootd:s0
-
-on property:sys.usb.config=fastboot
-    start fastbootd
 
 service vendor.vibrator-default /vendor/bin/hw/vendor.sprd.hardware.vibrator-service
     class hal
@@ -24,3 +16,14 @@ service vendor.vibrator-default /vendor/bin/hw/vendor.sprd.hardware.vibrator-ser
 
 on boot
     start vendor.vibrator-default
+
+on fs
+    start load_modules
+
+
+service load_modules /system/etc/init/load_modules.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0

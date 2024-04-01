@@ -57,8 +57,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	# flashlight
-	export OF_FLASHLIGHT_ENABLE=1
-        export OF_FL_PATH1="/sys/devices/virtual/torch/torch/torch_level"
+	export OF_FLASHLIGHT_ENABLE=0
     
 	# R11
 	export FOX_VERSION="R11.1_1"
