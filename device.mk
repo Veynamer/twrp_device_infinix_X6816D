@@ -78,8 +78,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery \
+    android.hardware.fastboot@1.0-impl \
+    android.hardware.fastboot@1.0-impl.recovery \
     fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
