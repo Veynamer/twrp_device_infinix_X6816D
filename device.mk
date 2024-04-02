@@ -76,6 +76,9 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.2.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator@1.3.so
 
+PRODUCT_PACKAGES += \
+    vibrator
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl \
