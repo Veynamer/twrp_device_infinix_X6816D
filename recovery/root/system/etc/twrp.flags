@@ -12,23 +12,24 @@
 /vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1;wipeingui
 
 /super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
-/boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
-/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
+/boot                    emmc     /dev/block/by-name/boot                      flags=display="boot";slotselect;backup=1;flashimg=1
+/vendor_boot             emmc     /dev/block/by-name/vendor_boot               flags=display="vendor boot";slotselect;backup=1;flashimg=1
+/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display="dtbo";slotselect;backup=1;flashimg=1
 /data                    f2fs     /dev/block/by-name/userdata           
-/mnt/vendor              ext4     /dev/block/by-name/vendor                    flags=display=prodnv;backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display=logo;backup=1;flashimg=1
-/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display=Fastboot logo;backup=1;flashimg=1
+/mnt/vendor              ext4     /dev/block/by-name/vendor                    flags=display="prodnv";backup=1;flashimg=1
+/logo                    emmc     /dev/block/by-name/logo                      flags=display="logo";backup=1;flashimg=1
+/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
 # AVB
-/vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
-/vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display=vbmeta_system;slotselect;backup=1;flashimg=1
-/vbmeta_vendor           emmc     /dev/block/by-name/vbmeta_vendor             flags=display=vbmeta_vendor;slotselect;backup=1;flashimg=1
-/vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display=vbmeta_product;slotselect;backup=1;flashimg=1
-/vbmeta_system_ext       emmc     /dev/block/by-name/vbmeta_system_ext         flags=display=vbmeta_system_ext;slotselect;backup=1;flashimg=1
-/system                  ext4     system                                       flags=display=system;logical;slotselect;backup=1
-/system_ext              ext4     system_ext                                   flags=display=system_ext;logical;slotselect;backup=1
-/vendor                  ext4     vendor                                       flags=display=vendor;logical;slotselect;backup=1
-/product                 ext4     product                                      flags=display=product;logical;slotselect;backup=1
-/metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
+/vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display="vbmeta";slotselect;backup=1;flashimg=1
+/vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display="vbmeta_system";slotselect;backup=1;flashimg=1
+/vbmeta_vendor           emmc     /dev/block/by-name/vbmeta_vendor             flags=display="vbmeta_vendor";slotselect;backup=1;flashimg=1
+/vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display="vbmeta_product";slotselect;backup=1;flashimg=1
+/vbmeta_system_ext       emmc     /dev/block/by-name/vbmeta_system_ext         flags=display="vbmeta_system_ext";slotselect;backup=1;flashimg=1
+/system                  ext4     system                                       flags=display="system";logical;slotselect;backup=1
+/system_ext              ext4     system_ext                                   flags=display="system_ext";logical;slotselect;backup=1
+/vendor                  ext4     vendor                                       flags=display="vendor";logical;slotselect;backup=1
+/product                 ext4     product                                      flags=display="product";logical;slotselect;backup=1
+/metadata                ext4     /dev/block/by-name/metadata                  flags=display="metadata";backup=1
 # Removable storage
 /external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;removable;fsflags="utf8"
 /usb-otg                 vfat     /dev/block/sda1                              flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
