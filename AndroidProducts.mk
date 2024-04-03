@@ -4,6 +4,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# SPRD-Device
+#
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/ofox_X6816D.mk
